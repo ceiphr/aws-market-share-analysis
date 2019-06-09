@@ -1,0 +1,9 @@
+### JupyterNotebook ###
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+website_sample.csv
+websites_using_aws.csv
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
