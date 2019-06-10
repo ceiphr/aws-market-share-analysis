@@ -13120,9 +13120,19 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-Random-Sample">Simple Random Sample<a class="anchor-link" href="#Simple-Random-Sample">&#182;</a></h2><p>Below is a program that creates a simple random sample of websites according to Alexa Analytics' Top One Million sites CSV. The function <code>create_sample</code> creates a random integer between 0 and 999,999. That number acts as the index for the site we will get from the population CSV (e.g. The site at index 0 is google.com).</p>
+<p>Once we have selected a site for our sample, we need to resolve its IP address (note: we will be using only IPv4 addresses as Alexa only offers those in their dataset and all websites should handle IPv4 and IPv6). If we are unable to resolve the address than we will randomly select another site to replace it (IS THAT OKAY?).</p>
+<p>When sampling is completed, the sample dataset (domains and IPv4 addresses) is exported to a CSV file.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span>
@@ -13134,7 +13144,7 @@ div#notebook {
 <span class="n">top_sites</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;top-1m.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># n is sample size</span>
-<span class="n">n</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">1000</span>
 
 <span class="c1"># Dictionary used for stored sample data</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="p">{</span>
@@ -13181,7 +13191,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13211,153 +13221,153 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>vexere.com</td>
-      <td>125.212.247.90</td>
+      <td>ipos.vn</td>
+      <td>94.237.76.49</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>gdx.net</td>
-      <td>97.82.82.244</td>
+      <td>sectorul4news.ro</td>
+      <td>89.42.219.210</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>filmygore.blogspot.com</td>
-      <td>172.217.6.161</td>
+      <td>newprint.ca</td>
+      <td>37.218.253.61</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>occ.bg</td>
-      <td>104.31.85.57</td>
+      <td>destinationhotels.com</td>
+      <td>23.100.83.213</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>raboo-co.ir</td>
-      <td>51.77.184.210</td>
+      <td>flutetoday.com</td>
+      <td>97.74.55.1</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>myfirstfarmers.com</td>
-      <td>23.185.0.3</td>
+      <td>serialcrush.com</td>
+      <td>62.149.142.158</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>petstock.com.au</td>
-      <td>165.160.15.20</td>
+      <td>mybmtc.com</td>
+      <td>202.71.129.225</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>laheia.gr</td>
-      <td>185.79.189.178</td>
+      <td>hmi.edu</td>
+      <td>192.249.121.112</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>syncplay.pl</td>
-      <td>91.121.132.98</td>
+      <td>flashkit.com</td>
+      <td>70.42.23.121</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>krskstate.ru</td>
-      <td>185.211.0.210</td>
+      <td>fucktubes.xxx</td>
+      <td>104.28.23.71</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>homescherish.com</td>
-      <td>74.63.240.162</td>
+      <td>thetodaypost.com</td>
+      <td>104.31.66.246</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>americanfoodbloggers.com</td>
-      <td>72.14.191.82</td>
+      <td>avpgalaxy.net</td>
+      <td>162.211.84.48</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>botanic06.com</td>
-      <td>62.210.16.62</td>
+      <td>scwtenor.com</td>
+      <td>74.208.236.209</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>momofuku.com</td>
-      <td>35.196.138.31</td>
+      <td>ecom.ly</td>
+      <td>104.18.47.2</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>kashanedu.ir</td>
-      <td>185.153.208.53</td>
+      <td>redwolfwildernessadventures.com</td>
+      <td>67.59.136.110</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>jakesembassy.com</td>
-      <td>67.220.188.162</td>
+      <td>wesounds.com</td>
+      <td>107.6.153.170</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>hoodsforheroes.org</td>
-      <td>162.144.223.31</td>
+      <td>bloganten.ru</td>
+      <td>92.53.114.3</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>sibroid.com</td>
-      <td>89.42.211.83</td>
+      <td>karinto.in</td>
+      <td>175.134.120.229</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>dquail.com</td>
-      <td>185.143.232.5</td>
+      <td>myscopeoutreach.org</td>
+      <td>182.160.163.245</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>sdmts.com</td>
-      <td>12.236.147.10</td>
+      <td>landsurveyor.blogfa.com</td>
+      <td>149.56.201.253</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>mitrphol.com</td>
-      <td>203.146.102.21</td>
+      <td>finministry.com</td>
+      <td>104.18.41.100</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>asforme.org</td>
-      <td>162.241.225.30</td>
+      <td>odeontravel.rs</td>
+      <td>195.252.107.131</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>mirzhivotnye.ru</td>
-      <td>185.253.33.126</td>
+      <td>greeningtheblue.org</td>
+      <td>104.27.147.128</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>agorapublicaffairs.com</td>
-      <td>66.198.240.13</td>
+      <td>jerusalemperspective.com</td>
+      <td>104.199.115.212</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>kenyabuzz.com</td>
-      <td>34.249.215.96</td>
+      <td>bazi-oksana.ru</td>
+      <td>5.101.152.32</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>fortytwo.sg</td>
-      <td>104.20.154.42</td>
+      <td>leupold.com</td>
+      <td>52.88.153.55</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>changonerias.com.mx</td>
-      <td>74.208.236.225</td>
+      <td>cloud9.gg</td>
+      <td>23.227.38.32</td>
     </tr>
     <tr>
       <th>27</th>
-      <td>sehatsegar.net</td>
-      <td>104.27.168.176</td>
+      <td>goldsgym.com</td>
+      <td>162.209.117.196</td>
     </tr>
     <tr>
       <th>28</th>
-      <td>srpskijezickiatelje.com</td>
-      <td>107.20.139.176</td>
+      <td>tagbox.in</td>
+      <td>52.172.54.225</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>hctorpedo.ru</td>
-      <td>79.174.76.38</td>
+      <td>sexmamki.org</td>
+      <td>151.80.209.25</td>
     </tr>
     <tr>
       <th>...</th>
@@ -13365,158 +13375,158 @@ div#notebook {
       <td>...</td>
     </tr>
     <tr>
-      <th>70</th>
-      <td>yingmoo.com</td>
-      <td>103.41.53.194</td>
+      <th>970</th>
+      <td>jb.com.br</td>
+      <td>152.199.54.25</td>
     </tr>
     <tr>
-      <th>71</th>
-      <td>pacificard.com.ec</td>
-      <td>157.100.71.4</td>
+      <th>971</th>
+      <td>vietadsonline.com</td>
+      <td>171.244.34.197</td>
     </tr>
     <tr>
-      <th>72</th>
-      <td>pandzee.com</td>
-      <td>104.18.49.60</td>
+      <th>972</th>
+      <td>itftkd.ir</td>
+      <td>185.128.81.85</td>
     </tr>
     <tr>
-      <th>73</th>
-      <td>ipm-mathemagic.com</td>
-      <td>192.124.249.110</td>
+      <th>973</th>
+      <td>rouxroamer.com</td>
+      <td>104.31.95.99</td>
     </tr>
     <tr>
-      <th>74</th>
-      <td>leahberman.tumblr.com</td>
-      <td>66.6.33.21</td>
+      <th>974</th>
+      <td>filejo.co.kr</td>
+      <td>43.255.255.83</td>
     </tr>
     <tr>
-      <th>75</th>
-      <td>transitofloridablanca.gov.co</td>
-      <td>204.93.177.191</td>
+      <th>975</th>
+      <td>peraichi.com</td>
+      <td>54.230.89.244</td>
     </tr>
     <tr>
-      <th>76</th>
-      <td>zombicity.info</td>
-      <td>193.109.247.65</td>
+      <th>976</th>
+      <td>hw3d.net</td>
+      <td>192.99.14.211</td>
     </tr>
     <tr>
-      <th>77</th>
-      <td>euthemians.com</td>
-      <td>104.25.190.34</td>
+      <th>977</th>
+      <td>nekoshop.ru</td>
+      <td>37.140.192.198</td>
     </tr>
     <tr>
-      <th>78</th>
-      <td>hindi-kavita.com</td>
-      <td>139.162.47.194</td>
+      <th>978</th>
+      <td>maxbestwork.com</td>
+      <td>66.199.189.51</td>
     </tr>
     <tr>
-      <th>79</th>
-      <td>myeslsca.com</td>
-      <td>213.32.31.32</td>
+      <th>979</th>
+      <td>hindihelpguru.com</td>
+      <td>199.250.213.223</td>
     </tr>
     <tr>
-      <th>80</th>
-      <td>techmediasquare.com</td>
-      <td>94.23.201.37</td>
+      <th>980</th>
+      <td>exertion-fitness.com</td>
+      <td>23.227.38.32</td>
     </tr>
     <tr>
-      <th>81</th>
-      <td>greece.com</td>
-      <td>104.28.8.97</td>
+      <th>981</th>
+      <td>aktualnacenabytu.sk</td>
+      <td>212.57.38.25</td>
     </tr>
     <tr>
-      <th>82</th>
-      <td>lafirstdates.com</td>
-      <td>38.130.197.118</td>
+      <th>982</th>
+      <td>geoequipos.cl</td>
+      <td>192.140.57.10</td>
     </tr>
     <tr>
-      <th>83</th>
-      <td>mc-complex.com</td>
-      <td>104.24.126.2</td>
+      <th>983</th>
+      <td>removenotifications.com</td>
+      <td>192.64.119.93</td>
     </tr>
     <tr>
-      <th>84</th>
-      <td>donmooreswartales.com</td>
-      <td>192.0.78.25</td>
+      <th>984</th>
+      <td>matbit.net</td>
+      <td>5.61.47.250</td>
     </tr>
     <tr>
-      <th>85</th>
-      <td>leveragetech.com.au</td>
-      <td>103.211.6.10</td>
+      <th>985</th>
+      <td>homebasedonlinevehiclemarketing.com</td>
+      <td>146.66.96.176</td>
     </tr>
     <tr>
-      <th>86</th>
-      <td>soundoasis.com</td>
-      <td>192.124.249.109</td>
+      <th>986</th>
+      <td>xn--v8j5erc590uusnxox.com</td>
+      <td>183.90.253.8</td>
     </tr>
     <tr>
-      <th>87</th>
-      <td>b-p.sale</td>
-      <td>193.233.63.11</td>
+      <th>987</th>
+      <td>nflsport.icu</td>
+      <td>198.54.121.189</td>
     </tr>
     <tr>
-      <th>88</th>
-      <td>warsteiner.de</td>
-      <td>213.160.71.154</td>
+      <th>988</th>
+      <td>izithakazelo.blog</td>
+      <td>192.0.78.191</td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>mp2carnot.free.fr</td>
-      <td>212.27.63.111</td>
+      <th>989</th>
+      <td>irinabiz.ru</td>
+      <td>138.201.199.38</td>
     </tr>
     <tr>
-      <th>90</th>
-      <td>bizservices.ir</td>
-      <td>79.175.172.150</td>
+      <th>990</th>
+      <td>intercity.pl</td>
+      <td>46.174.180.162</td>
     </tr>
     <tr>
-      <th>91</th>
-      <td>elaguijondelescorpion.com</td>
-      <td>198.54.116.10</td>
+      <th>991</th>
+      <td>bongacams3.com</td>
+      <td>31.192.123.62</td>
     </tr>
     <tr>
-      <th>92</th>
-      <td>noel.gv.at</td>
-      <td>194.232.42.155</td>
+      <th>992</th>
+      <td>twinstrangers.net</td>
+      <td>52.214.239.109</td>
     </tr>
     <tr>
-      <th>93</th>
-      <td>mychameleon.com.au</td>
-      <td>43.230.64.65</td>
+      <th>993</th>
+      <td>textgeneratorfont.com</td>
+      <td>162.241.133.121</td>
     </tr>
     <tr>
-      <th>94</th>
-      <td>dappercodes.com</td>
-      <td>104.24.117.154</td>
+      <th>994</th>
+      <td>silversaints.com</td>
+      <td>212.188.174.246</td>
     </tr>
     <tr>
-      <th>95</th>
-      <td>koinwnia.com</td>
-      <td>66.147.240.199</td>
+      <th>995</th>
+      <td>evassmat.com</td>
+      <td>104.28.24.228</td>
     </tr>
     <tr>
-      <th>96</th>
-      <td>lockvista.com</td>
-      <td>184.168.131.241</td>
+      <th>996</th>
+      <td>mpets.mobi</td>
+      <td>136.243.25.36</td>
     </tr>
     <tr>
-      <th>97</th>
-      <td>ggpc.co.nz</td>
-      <td>119.47.116.121</td>
+      <th>997</th>
+      <td>londongateway.com</td>
+      <td>65.52.130.1</td>
     </tr>
     <tr>
-      <th>98</th>
-      <td>from-template.appspot.com</td>
-      <td>172.217.9.180</td>
+      <th>998</th>
+      <td>derangler.shop</td>
+      <td>85.236.56.247</td>
     </tr>
     <tr>
-      <th>99</th>
-      <td>pornavigator.com</td>
-      <td>37.1.205.41</td>
+      <th>999</th>
+      <td>tavirekini.lv</td>
+      <td>94.100.11.185</td>
     </tr>
   </tbody>
 </table>
-<p>100 rows × 2 columns</p>
+<p>1000 rows × 2 columns</p>
 </div>
 </div>
 
@@ -13533,9 +13543,18 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Proportion-of-IPv4-addresses-owned-by-AWS">Proportion of IPv4 addresses owned by AWS<a class="anchor-link" href="#Proportion-of-IPv4-addresses-owned-by-AWS">&#182;</a></h2><p>The program takes a list of all IPv4 addresses owned by AWS and compares them to the list of addresses in our sample. AWS does not give a list of IPv4 address but instead gives a subnet of their addresses, this means they've purchased addresses in bulk so they're grouped together. In order to properly compare an IPv4 address to a subnet, python offers a library called <code>ipaddress</code> that breaks up subnets and ip addresses into a data format that can easily be compared.</p>
+<p>If an address appears in Amazon's IPv4 range (their owned addresses) than the domain associated with the IP address is appended to a list. The list of websites is then exported as a CSV file.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">ipaddress</span> 
@@ -13590,7 +13609,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13619,26 +13638,251 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>kenyabuzz.com</td>
+      <td>leupold.com</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>srpskijezickiatelje.com</td>
+      <td>wanasatime.com</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>atlasophthalmology.net</td>
+      <td>simplesdental.com</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>basketballking.jp</td>
+      <td>monetixwallet.com</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2appstudio.com</td>
+      <td>10tv.in</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>rosedalecenter.com</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>margstacobistro.com</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>shanghainavi.com</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>keaweather.net</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lion.co.nz</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>moomii.jp</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>figleafapp.com</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>maharajamultiplex.in</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>conchovalleyhomepage.com</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>honkmedia.net</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>willowtreeapps.com</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>playvod.ma</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>tigosports.gt</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>araelium.com</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>boostnote.io</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>echofoodshelf.org</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>obonsai.com.br</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>atcost.in</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>profsnhcadmission.in</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>manalonline.com</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>nj211.org</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>conta.no</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>cldmail.co.uk</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>obo.se</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>soft32.es</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>juegosmesa.cl</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>localone.app</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>grjapan.jp</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>peachysnaps.com</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>knottyladyyarns.com</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>amormaturo.com</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>hltmag.co.uk</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>oldtownportraitgallery.com</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>matterport.com</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>parkopedia.co.uk</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>rehabs.com</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>diablomedia.com</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>battersea.org.uk</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>qmo.org.au</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>midlandsb.com</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>kuflink.co.uk</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>lunns.com</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>send2sell.com</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>wvi.org</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>letsignite.in</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>kolkt.com</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>lucasmaier.com.br</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>ellevatenetwork.com</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>completefrance.com</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>bellevie-group.com</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>via.id</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>tweentribune.com</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>filesun.net</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>peraichi.com</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>twinstrangers.net</td>
     </tr>
   </tbody>
 </table>
+<p>61 rows × 1 columns</p>
 </div>
 </div>
 
@@ -13655,9 +13899,26 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Testing-in-Python">Testing in Python<a class="anchor-link" href="#Testing-in-Python">&#182;</a></h2><p>This is a procedure for completing a one-proportion z-test given the sample dataset and proportion of websites using AWS. First we declare <code>p</code> as the claimed market share percentage (The Forbes article claimed AWS has a 31% market share). We calculate <code>q</code> and proceed with our success failure condition.</p>
+<p>The <code>assert</code> lines basically test s/f - if np or qp is &lt; 10 than the program stops and an exception (error) is raised. Because the index values when sampling were random, than we can assume our sample is random.</p>
+<p>Next we calculate our z-score value with a one-proportion z-test:
+$$
+\begin{align}
+z = \frac{\hat{p} - p}{\sigma} &amp;&amp; \sigma = \sqrt{\frac{pq}{n}}
+\end{align}
+$$</p>
+<p>The code for calculating z-score is <code>z = ((len(websites_using_aws)/n) - p)/sd</code>. For standard deviation, it's <code>sd = math.sqrt((p*q)/2)</code>.
+Once we calculate our z-score, finally we can get our p-value. The library SciPy offers statistics which will allow us to calculate p-value similar to how a calculator would. Once complete, we can do hypothesis testing using a significance level of 5%.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -13674,16 +13935,18 @@ div#notebook {
 <span class="k">assert</span> <span class="n">n</span><span class="o">*</span><span class="n">q</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">,</span> <span class="kc">True</span>
 
 <span class="c1"># Calculate Z-Score &amp; P-Value</span>
-<span class="n">z</span> <span class="o">=</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">websites_using_aws</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">websites_using_aws</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="n">sd</span>
+
 <span class="n">p_value</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
   
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P: </span><span class="si">%f</span><span class="se">\t</span><span class="s1">Q: </span><span class="si">%f</span><span class="se">\n</span><span class="s1">NP: </span><span class="si">%f</span><span class="se">\t</span><span class="s1">NQ: </span><span class="si">%f</span><span class="se">\n\n</span><span class="s1">P-Hat: </span><span class="si">%f</span><span class="se">\n\n</span><span class="s1">Z-Score: </span><span class="si">%f</span><span class="se">\n</span><span class="s1">P-Value: </span><span class="si">%f</span><span class="se">\n</span><span class="s1">&#39;</span> 
       <span class="o">%</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="n">q</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">websites_using_aws</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">),</span> <span class="n">z</span><span class="p">,</span> <span class="n">p_value</span><span class="p">))</span>
 
 <span class="c1"># Hypothesis Testing</span>
-<span class="n">confidence_level</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="n">significants_level</span> <span class="o">=</span> <span class="mf">0.05</span>
 
-<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">confidence_level</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1mReject H0&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">significants_level</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1mReject H0&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1mFail to reject H0&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13702,14 +13965,14 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>P: 0.310000	Q: 0.690000
-NP: 31.000000	NQ: 69.000000
+NP: 310.000000	NQ: 690.000000
 
-P-Hat: 0.050000
+P-Hat: 0.061000
 
-Z-Score: -5.621704
-P-Value: 0.000000
+Z-Score: -0.761393
+P-Value: 0.223211
 
-<span class="ansi-bold">Reject H0
+<span class="ansi-bold">Fail to reject H0
 </span></pre>
 </div>
 </div>
@@ -13717,6 +13980,88 @@ P-Value: 0.000000
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h2><p>We've failed to reject the null-hypothesis as our P-Value is far above any possible siginicants level. The claim made within the Forbes article cannot be rejected thus we can't support any claim against it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Confidence-Interval-for-1-Proportion-Sample">Confidence Interval for 1-Proportion Sample<a class="anchor-link" href="#Confidence-Interval-for-1-Proportion-Sample">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Confidence-Interval-Based-on-Z-Test">Confidence Interval Based on Z-Test<a class="anchor-link" href="#Confidence-Interval-Based-on-Z-Test">&#182;</a></h2><p>This is a standard method to produce a confidence interval given the z-score, sample size, claimed population proportions and sample proportions produced by the one-proportion z-test.</p>
+<p>We use the following equations to calculate the standard deviation and standard error for our confidence interval:
+$$
+\begin{align}
+\sigma_p = \sqrt{\frac{pq}{n}} &amp;&amp; SE_p = \sqrt{\frac{\hat{p}\hat{q}}{n}}
+\end{align}
+$$</p>
+<p>Both $\hat{p}$ and $\hat{q}$ are simply $p$ and $q$ for the sample proportion. Using the z-score we calculated during our hypothesis test as our critical value, we can multipy it by our standard error to produce our margin of error, like so:
+$$
+ME = Z_c\sqrt{\frac{\hat{p}\hat{q}}{n}}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sample p (statistic) and q values</span>
+<span class="n">aws_p</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">websites_using_aws</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>
+<span class="n">aws_q</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">aws_p</span>
+
+<span class="c1"># Standard error for the sample proportion</span>
+<span class="n">se</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">aws_p</span><span class="o">*</span><span class="n">aws_q</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># Margin of error</span>
+<span class="n">me</span> <span class="o">=</span> <span class="n">z</span><span class="o">*</span><span class="n">se</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interval: (</span><span class="si">%f</span><span class="s1">, </span><span class="si">%f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">aws_p</span> <span class="o">+</span> <span class="n">me</span><span class="p">,</span> <span class="n">aws_p</span> <span class="o">-</span> <span class="n">me</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Interval: (0.055238, 0.066762)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interpretation">Interpretation<a class="anchor-link" href="#Interpretation">&#182;</a></h2><p>I am 95% confident that the true proportion of websites within the top one-million sites population is between 5.52% and 6.67%. By 95% confident I mean if the above procedures are reproduced with a sample size of 1,000 (used for this study), the proportion of websites within the sample that use AWS as their cloud provider will be between 5.52% and 6.67%.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
