@@ -5,7 +5,7 @@
 
 Below is a program that creates a simple random sample of websites according to Alexa Analytics' Top One Million sites CSV. The function `create_sample` creates a random integer between 0 and 999,999. That number acts as the index for the site we will get from the population CSV (e.g. The site at index 0 is google.com). 
 
-Once we have selected a site for our sample, we need to resolve its IP address (note: we will be using only IPv4 addresses as Alexa only offers those in their dataset and all websites should handle IPv4 and IPv6). If we are unable to resolve the address than we will randomly select another site to replace it (IS THAT OKAY?).
+Once we have selected a site for our sample, we need to resolve its IP address (note: we will be using only IPv4 addresses as Alexa only offers those in their dataset and all websites should handle IPv4 and IPv6). If we are unable to resolve the address than we will randomly select another site to replace it.
 
 When sampling is completed, the sample dataset (domains and IPv4 addresses) is exported to a CSV file.
 
@@ -56,6 +56,20 @@ dataset.to_csv('website_sample.csv')
 
 dataset
 ```
+
+# Use Dataset Instead of Creating New Sample
+Essentially importing `website_sample.csv` for our dataset so we don't have to create a new sample.
+
+
+```python
+n = 1000
+dataset = pd.DataFrame.from_csv('website_sample.csv')
+dataset
+```
+
+    /home/ari/.anaconda3/lib/python3.6/site-packages/ipykernel_launcher.py:2: FutureWarning: from_csv is deprecated. Please use read_csv(...) instead. Note that some of the default arguments are different, so please refer to the documentation for from_csv when changing your function calls
+      
+
 
 
 
@@ -731,7 +745,7 @@ assert n*p >= 10, True
 assert n*q >= 10, True
 
 # Calculate Z-Score & P-Value
-sd = math.sqrt((p*q)/2)
+sd = math.sqrt((p*q)/n)
 z = ((len(websites_using_aws)/n) - p)/sd
 
 p_value = st.norm.cdf(z)
@@ -751,15 +765,15 @@ else: print('\033[1mFail to reject H0')
     
     P-Hat: 0.061000
     
-    Z-Score: -0.761393
-    P-Value: 0.223211
+    Z-Score: -17.025268
+    P-Value: 0.000000
     
-    Fail to reject H0
+    [1mReject H0
 
 
 ## Interpretation
 
-We've failed to reject the null-hypothesis as our P-Value is far above any possible siginicants level. The claim made within the Forbes article cannot be rejected thus we can't support any claim against it.
+We've rejected the null-hypothesis as our P-Value is approximately zero. The claim made within the Forbes article is invalid according to this observational study as we can support the alternate hypothesis that Amazon does not have a 31% market share in cloud computing/hosting.
 
 # Confidence Interval for 1-Proportion Sample
 
@@ -794,9 +808,9 @@ me = z*se
 print('Interval: (%f, %f)' % (aws_p + me, aws_p - me))
 ```
 
-    Interval: (0.055238, 0.066762)
+    Interval: (-0.067852, 0.189852)
 
 
 ## Interpretation
 
-I am 95% confident that the true proportion of websites within the top one-million sites population is between 5.52% and 6.67%. By 95% confident I mean if the above procedures are reproduced with a sample size of 1,000 (used for this study), the proportion of websites within the sample that use AWS as their cloud provider will be between 5.52% and 6.67%.
+I am 95% confident that the true proportion of websites within the top one-million sites population is between -6.78% and 19%. By 95% confident I mean if the above procedures are reproduced with a sample size of 1,000, the proportion of websites within the sample that use AWS as their cloud provider will be between -6.78% and 19%. Because zero lies within our interval, the results of this study can be considered insignificant.
